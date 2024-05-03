@@ -47,11 +47,9 @@ color_list = {
 }
 
 title('Por favor, insira as notas do aluno: (Ex: 5.8)')
-
 for cont in range(3):
   student_note = float_number_verify(f'Digite a {cont + 1}ª nota: ')
   print('-' * 50)
   notes_list.append(student_note)
-
 
 grade_point_average(notes_list)
