@@ -21,13 +21,13 @@ def float_number_verify(message):
       else:
         return number
 
-def average_grade(list):
-  sum_value_notes = sum(list)
-  average = sum_value_notes / 3
+def grade_point_average(list):
+  sum_grade_point = sum(list)
+  average_point = sum_grade_point / 3
 
-  print(f'Com média de nota {average:.2f}, o(a) aluno(a) foi: ')
+  print(f'Com média de nota {average_point:.2f}, o(a) aluno(a) foi: ')
 
-  if average < 6:
+  if average_point < 6:
     message = f'{color_list["red"]}'
     message += f'REPROVADA!'
     message += f'{color_list["final"]}'
@@ -54,4 +54,4 @@ for cont in range(3):
   notes_list.append(student_note)
 
 
-average_grade(notes_list)
+grade_point_average(notes_list)
