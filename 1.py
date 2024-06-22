@@ -26,7 +26,7 @@ def float_number_verify(message):
         return number
 """
 
-"""def title(message):
+def title(message):
   print('-' * 50)
   print(f'{message:^50}')
   print('-' * 50)
@@ -56,10 +56,8 @@ def test_float_number_verify_success_case():
 def test_float_number_verify_fail_case():
   result = float_number_verify('a')
   expected = False
-  breakpoint()
   assert result == expected
 
-#test_float_number_verify_success_case()
 test_float_number_verify_fail_case()
 
 def grade_point_average(list):
@@ -83,7 +81,7 @@ colors = {
     'red' : '\033[31m',
     'green' : '\033[32m',
     'final' : '\033[m'
-}"""
+}
 
 """title('Por favor, insira as notas do aluno: (Ex: 5.8)')
 for cont in range(3):
@@ -98,90 +96,3 @@ for cont in range(3):
       continue
 
 grade_point_average(notes_list)"""
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-def recebe_dados():
-  lista = []
-  cont = 1
-  while len(lista) != 3:
-    print(lista, 'fora')
-    try:
-      valor = float_number_verify(input(f'Digite o {cont}º valor: '))
-    except (ValueError, TypeError):
-      print(f'Erro, valor "{valor}" não é válido hahahahahha')
-    else:
-      if valor < 0 or valor > 10:
-        print(f'Erro, valor "{valor}" não é válido hahahahahha, ele é muito maior')
-      else:
-        lista.append(valor)
-        cont += 1
-  result = soma_tres_valores(lista)
-  return result
-
-def float_number_verify(value):
-  valor = float(value)
-  return valor
-
-
-def soma_tres_valores(lista):
-    try:
-      value = sum(lista)
-      print(value)
-      return value
-
-    except TypeError:
-        msg = "Vossa auteza, por obséquio, digite um valor válido"
-        return msg
-
-def grade_point_average(sum_value):
-  average_point = sum_value / 3
-
-  print(f'Com média de nota {average_point:.2f}, o(a) aluno(a) foi: ')
-  final_color = colors["final"]
-  if average_point < 6:
-    red = colors["red"]
-    message = f'{red}REPROVADA!{final_color}'
-  else:
-    green = colors["green"]
-    message = f'{green}APROVADA!{final_color}'
-
-  return print(message)
-
-colors = {
-    'red' : '\033[31m',
-    'green' : '\033[32m',
-    'final' : '\033[m'
-}
-
-lista_de_notas = recebe_dados()
-print(' a lista de notas foi', lista_de_notas)
-
-grade_point_average(lista_de_notas)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
